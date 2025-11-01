@@ -1,45 +1,84 @@
-/* Two-Side Layout for Home Section */
+/* Reset & base */
+* { box-sizing: border-box; }
+html,body { height:100%; margin:0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:#0f1013; color:#e9eef2; }
+
+/* page layout */
+.page { display:flex; min-height:100vh; }
+
+/* SIDEBAR */
+.sidebar {
+  width:260px;
+  padding:32px 20px;
+  background: linear-gradient(180deg, rgba(20,22,25,1), rgba(15,16,19,1));
+  border-right:1px solid rgba(255,255,255,0.04);
+  display:flex; flex-direction:column; gap:24px;
+}
+.brand h1 { margin:0; color:#00eaff; font-size:28px; letter-spacing:0.5px; }
+.brand .role { margin:4px 0 0 0; color:#cfeff6; opacity:0.9; font-size:13px; }
+
+.nav { margin-top:10px; display:flex; flex-direction:column; gap:8px; }
+.nav-link {
+  color:#ffd87a; text-decoration:none; padding:8px 10px; border-radius:8px; font-weight:600;
+}
+.nav-link:hover { transform:translateX(6px); color:#00eaff; background:rgba(255,255,255,0.02); }
+
+/* SOCIAL LINKS */
+.social { margin-top:auto; display:flex; gap:10px; }
+.social a { color:#a9c9cf; text-decoration:none; font-size:13px; }
+
+/* MAIN CONTENT */
+.main { flex:1; padding:28px; overflow:auto; }
+
+/* HOME SECTION - two-column */
 .home-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 50px;
-  height: 90vh;
+  display:flex; gap:30px; align-items:center; justify-content:space-between;
+  padding:40px; margin-bottom:24px;
 }
-
-/* Left area text + menu */
-.left-content {
-  width: 50%;
+.intro { max-width:60%; }
+.intro h2 { margin:0 0 12px 0; font-size:28px; color:#fff; }
+.intro .name { color:#00eaff; }
+.intro .intro-text { color:#cbd6da; line-height:1.6; }
+.cta { margin-top:18px; display:flex; gap:12px; }
+.btn {
+  display:inline-block; padding:10px 18px; border-radius:8px; background:#00eaff; color:#061018; text-decoration:none; font-weight:700;
+  box-shadow:0 6px 18px rgba(0,234,255,0.08); transition:transform .18s ease, box-shadow .18s ease;
 }
+.btn:hover { transform:translateY(-4px); box-shadow:0 10px 26px rgba(0,234,255,0.12); }
+.btn.ghost { background:transparent; color:#cfeff6; border:1px solid rgba(255,255,255,0.06); }
 
-.left-content h2 {
-  font-size: 2.8rem;
-  color: #00eaff;
+/* Photo */
+.photo-wrap { width:340px; display:flex; justify-content:center; align-items:center; }
+.profile-photo {
+  width:320px; height:320px; object-fit:cover; border-radius:16px; border:3px solid rgba(0,234,255,0.12);
+  box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+  transition: transform .4s ease, box-shadow .4s ease;
 }
+.profile-photo:hover { transform:translateY(-6px) rotate(-1deg); box-shadow: 0 18px 44px rgba(0,234,255,0.14); }
 
-.left-content p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+/* Cards & sections */
+.card { background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00)); padding:24px; border-radius:12px; margin-bottom:18px; border:1px solid rgba(255,255,255,0.02); }
+.card h3 { margin-top:0; color:#dff7fb; }
+
+.projects .project-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:12px; margin-top:12px; }
+.project { padding:14px; border-radius:10px; background:rgba(255,255,255,0.02); }
+
+/* footer */
+.footer { text-align:center; color:#95abb0; padding:10px 0 40px 0; }
+
+/* mobile */
+.menu-toggle {
+  display:none;
+  position:fixed; top:14px; right:14px; z-index:40; background:#00eaff; color:#061018; border:none; padding:10px 12px; border-radius:8px; font-weight:700;
 }
-
-.side-nav a {
-  display: block;
-  margin: 10px 0;
-  color: #ffcc00;
-  font-size: 1.1rem;
-  text-decoration: none;
-}
-
-.side-nav a:hover {
-  color: #00eaff;
-  transform: translateX(5px);
-}
-
-/* Right side photo */
-.right-photo img {
-  width: 350px;
-  height: 350px;
-  border-radius: 20px;
-  object-fit: cover;
-  border: 3px solid #00eaff;
+@media (max-width:880px) {
+  .page { flex-direction:column; }
+  .sidebar { width:100%; flex-direction:row; align-items:center; padding:12px 16px; gap:12px; }
+  .nav { flex-direction:row; gap:6px; display:none; }
+  .menu-toggle { display:block; }
+  .home-section { flex-direction:column-reverse; padding:18px; }
+  .intro { max-width:100%; text-align:center; }
+  .photo-wrap { width:220px; }
+  .profile-photo { width:200px; height:200px; }
+  .social { display:none; }
+  .nav.open { display:flex; flex-direction:row; gap:8px; }
 }
