@@ -1,0 +1,45 @@
+/* Two-Side Layout for Home Section */
+.home-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  height: 90vh;
+}
+
+/* Left area text + menu */
+.left-content {
+  width: 50%;
+}
+
+.left-content h2 {
+  font-size: 2.8rem;
+  color: #00eaff;
+}
+
+.left-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.side-nav a {
+  display: block;
+  margin: 10px 0;
+  color: #ffcc00;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.side-nav a:hover {
+  color: #00eaff;
+  transform: translateX(5px);
+}
+
+/* Right side photo */
+.right-photo img {
+  width: 350px;
+  height: 350px;
+  border-radius: 20px;
+  object-fit: cover;
+  border: 3px solid #00eaff;
+}
