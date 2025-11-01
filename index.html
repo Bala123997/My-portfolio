@@ -1,57 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Bala Subramanyam Battalu — Future Web Developer. Portfolio and contact." />
+  <title>Bala Subramanyam Battalu — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="page">
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+      <div class="brand">
+        <h1>Bala</h1>
+        <p class="role">Future Web Developer</p>
+      </div>
 
-  <header>
-    <h1>My Portfolio</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+      <nav class="nav">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
 
-  <section id="home" class="home-section">
-  <div class="left-content">
-    <h2>Hello, I am Bala</h2>
-    <p>Future Full Stack Developer 🚀</p>
+      <div class="social">
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="GitHub">GitHub</a>
+      </div>
+    </aside>
 
-    <nav class="side-nav">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <!-- MAIN CONTENT -->
+    <main class="main">
+      <section id="home" class="home-section">
+        <div class="intro">
+          <h2>Hello, I am <span class="name">Bala Subramanyam Battalu</span></h2>
+          <p class="intro-text">I’m a Future Web Developer learning frontend & full stack technologies. I build clean, responsive, and accessible websites.</p>
+
+          <div class="cta">
+            <a class="btn" href="#projects">See Projects</a>
+            <a class="btn ghost" href="#contact">Contact Me</a>
+          </div>
+        </div>
+
+        <div class="photo-wrap" aria-hidden="false">
+          <!-- Smart casual default image (Unsplash) -->
+          <img src="https://images.unsplash.com/photo-1545996094-6b9d5f7b2f5b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=8c8e48b7fdf31b9b6e9f1a3b0b6f8a7e" alt="Portrait of Bala (default)" class="profile-photo" />
+        </div>
+      </section>
+
+      <section id="about" class="card">
+        <h3>About Me</h3>
+        <p>I study Engineering Physics and I am learning web development. I enjoy building practical projects and improving user experiences with clean designs.</p>
+      </section>
+
+      <section id="projects" class="card projects">
+        <h3>Projects</h3>
+        <div class="project-grid">
+          <article class="project">
+            <h4>Portfolio Starter</h4>
+            <p>A responsive portfolio template built with HTML, CSS and small JS interactions.</p>
+          </article>
+          <article class="project">
+            <h4>Mini Calculator</h4>
+            <p>A small JavaScript calculator for practice with DOM handling and events.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="card">
+        <h3>Contact</h3>
+        <p>Email: <a href="mailto:yourname@example.com">yourname@example.com</a></p>
+        <p>If you'd like, replace this email with your real one in the HTML file.</p>
+      </section>
+
+      <footer class="footer">
+        <p>© <span id="year"></span> Bala Subramanyam Battalu</p>
+      </footer>
+    </main>
   </div>
 
-  <div class="right-photo">
-    <img src="mypic.jpg.jpg" alt="My Photo">
-  </div>
-</section>
-    <h2>Hello, I am a Web Developer</h2>
-    <p>Welcome to my portfolio website!</p>
-  </section>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am learning web development using VS Code.</p>
-  </section>
-
-  <section id="projects">
-    <h2>My Projects</h2>
-    <p>More projects will be added soon!</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Email: yourname@gmail.com</p>
-  </section>
+  <button id="menuToggle" class="menu-toggle" aria-label="Open menu">☰</button>
 
   <script src="script.js"></script>
 </body>
